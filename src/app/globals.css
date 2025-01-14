@@ -2,20 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* src/app/globals.css */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: sans-serif;
 }
+
+/* Inside globals.css or a custom styles file:
+   These are example overrides to make react-calendar blend with Tailwind
+*/
+.react-calendar {
+  background: white;
+  border: 1px solid #e5e7eb; /* tailwind gray-200 */
+  border-radius: 0.375rem; /* tailwind rounding .375rem => rounded-md */
+  padding: 1rem;
+}
+
+.react-calendar__tile {
+  padding: 0.5rem;
+  text-align: center;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #f3f4f6; /* tailwind gray-100 */
+  border-radius: 0.375rem;
+}
+.react-calendar__tile--active {
+  background: #3b82f6; /* tailwind blue-500 */
+  color: white;
+}
+
+/* If you're using Tailwind, ensure to import it here:
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+*/
